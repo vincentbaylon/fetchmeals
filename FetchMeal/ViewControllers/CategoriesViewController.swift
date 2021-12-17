@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CategoriesViewController.swift
 //  FetchMeal
 //
 //  Created by Vince Baylon on 12/16/21.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NetworkManager.shared.getCategories()
     }
 
-
 }
-
