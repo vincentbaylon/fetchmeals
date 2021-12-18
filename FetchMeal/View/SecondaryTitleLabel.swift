@@ -1,13 +1,13 @@
 //
-//  ActionButton.swift
+//  SecondaryTitleLabel.swift
 //  FetchMeal
 //
-//  Created by Vince Baylon on 12/16/21.
+//  Created by Vince Baylon on 12/17/21.
 //
 
 import UIKit
 
-class ActionButton: UIButton {
+class SecondaryTitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -17,17 +17,17 @@ class ActionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroundColor: UIColor, title: String) {
+    init(fontSize: CGFloat) {
         super.init(frame: .zero)
-        self.backgroundColor = backgroundColor
-        self.setTitle(title, for: .normal)
+        font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         configure()
     }
     
     private func configure() {
-        layer.cornerRadius = 10
-        setTitleColor(.white, for: .normal)
-        titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        textColor = .secondaryLabel
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.90
+        lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

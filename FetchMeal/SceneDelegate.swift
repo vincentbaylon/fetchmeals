@@ -8,17 +8,29 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = CategoriesViewController()
+        window?.rootViewController = createCategoriesNavigationController()
         window?.makeKeyAndVisible()
+    }
+    
+    func createCategoriesNavigationController() -> UINavigationController {
+        let categoriesVC = CategoriesViewController()
+        categoriesVC.title = "Fetch Meals"
+        
+        return UINavigationController(rootViewController: categoriesVC)
+    }
+    
+    func createMealsNavigationController() -> UINavigationController {
+        let mealsVC = CategoriesViewController()
+        mealsVC.title = "Meals"
+        
+        return UINavigationController(rootViewController: mealsVC)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

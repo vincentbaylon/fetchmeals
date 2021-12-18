@@ -8,7 +8,6 @@
 import UIKit
 
 class AlertViewController: UIViewController {
-    
     let containerView = UIView()
     let titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = BodyLabel(textAlignment: .center)
@@ -94,7 +93,6 @@ class AlertViewController: UIViewController {
             
         ])
     }
-    
     
     @objc func dismissVC() {
         dismiss(animated: true)

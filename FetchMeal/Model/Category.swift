@@ -11,7 +11,7 @@ struct EntireCategory: Codable {
     let categories: [Category]
 }
 
-struct Category: Codable {
+struct Category: Codable, Hashable {
     var idCategory: String
     var strCategory: String
     var strCategoryThumb: String

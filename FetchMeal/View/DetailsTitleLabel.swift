@@ -1,13 +1,12 @@
 //
-//  BodyLabel.swift
+//  DetailsTitleLabel.swift
 //  FetchMeal
 //
-//  Created by Vince Baylon on 12/16/21.
+//  Created by Vince Baylon on 12/17/21.
 //
-
 import UIKit
 
-class BodyLabel: UILabel {
+class DetailsTitleLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -17,18 +16,19 @@ class BodyLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(textAlignment: NSTextAlignment) {
+    init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
+        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
         configure()
     }
     
     private func configure() {
-        textColor = .secondaryLabel
-        font = UIFont.preferredFont(forTextStyle: .body)
+        textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.75
+        minimumScaleFactor = 0.5
         lineBreakMode = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
